@@ -10,15 +10,17 @@ function MealsOverviewScreen({ route }) {
   });
 
   function renderMealItem(itemData) {
-    return (
-      <MealItem
-        title={itemData.item.title}
-        imageUrl={itemData.item.imageUrl}
-        duration={itemData.item.duration}
-        complexity={itemData.item.complexity}
-        affordability={itemData.item.affordability}
-      />
-    );
+    const item = itemData.item;
+    
+    const mealsProps = {
+      title: item.title,
+      imageUrl: item.imageUrl,
+      duration: item.duration,
+      complexity: item.complexity,
+      affordability: item.affordability,
+    };
+
+    return <MealItem {...mealsProps} />;
   }
 
   return (
