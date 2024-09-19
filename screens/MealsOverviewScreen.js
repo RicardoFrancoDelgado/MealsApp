@@ -20,10 +20,12 @@ function MealsOverviewScreen({ route, navigation }) {
     });
   }, [catchId, navigation]);
 
+
   function renderMealItem(itemData) {
     const item = itemData.item;
 
     const mealsProps = {
+      id: item.id,
       title: item.title,
       imageUrl: item.imageUrl,
       duration: item.duration,
